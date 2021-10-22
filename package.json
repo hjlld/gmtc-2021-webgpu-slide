@@ -1,0 +1,38 @@
+{
+  "name": "gmtc-2021-webgpu-slide",
+  "version": "0.0.1",
+  "description": "WebGPU Slide",
+  "productName": "GMTC 2021 WebGPU Slide",
+  "author": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "core-js": "^3.6.5",
+    "hiwebgl-shadertoy-webgpu": "0.0.4",
+    "prismjs": "^1.25.0",
+    "quasar": "^2.0.0",
+    "vue-prism-component": "^2.0.0"
+  },
+  "devDependencies": {
+    "@quasar/app": "^3.0.0"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 12.22.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

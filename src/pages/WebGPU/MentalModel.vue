@@ -1,0 +1,22 @@
+<template>
+  <q-page class="flex flex-center">
+    <div class="row justify-center items-center content-center wrap q-gutter-md text-white text-left text-h4 text-weight-regular" >
+      <div class="col-10 text-center text-h3 text-weight-bold">
+          万物皆 Promise
+      </div>
+      <div class="col-10 p-box q-pa-md">
+        <ul>
+            <li class="q-py-md">每个 WebGPU 对象在内部实际上是一个 Promise，所有 WebGPU 方法都是 async 和 await 的异步方法</li>
+            <li class="q-py-md">同时，异步代码的执行实际上是被外包给了 GPU 进程（在那里实际上才是同步进行的）</li>
+            <li class="q-py-md">每个 GPU 开头的 JavaScript 对象，实际对应着 GPU 进程上的一个 C++/Rust 里的 GPU 内部对象
+                <ul>
+                    <li class="q-py-md text-h5">一个 GPUBuffer 对象在内容进程中可能使用 150 字节的 CPU 内存，但却持有 1GB 的 GPU 内存分配</li>
+                </ul>
+            </li>
+            <li class="q-py-md">在 GPU 进程上验证每个命令时，都会检查 isValid，如果验证失败就会返回一个新的、无效的对象</li>
+            <li class="q-py-md">但是就在同时，在内容进程里，该对象的 JavaScript 实现（即 GPU 开头的 JavaScript 对象）还并不知道此对象是否有效</li>
+        </ul>
+      </div>
+    </div>
+  </q-page>
+</template>

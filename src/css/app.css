@@ -1,0 +1,16 @@
+/* app global css */
+a {
+    text-decoration: none;
+}
+html,
+body {
+  overflow-y: hidden !important;
+}
+.p-box {
+  letter-spacing: 0.03em;
+  border-radius: 18px;
+  background-color: rgba(69, 90, 100, 0.4);
+}
+kbd {
+  font-family: Consola;
+}
