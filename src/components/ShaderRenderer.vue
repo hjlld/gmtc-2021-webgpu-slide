@@ -4,7 +4,7 @@
 </template>
 <script>
 import { onMounted, ref } from 'vue';
-import { onBeforeRouteUpdate } from 'vue-router';
+import { onBeforeRouteUpdate, onBeforeRouteLeave } from 'vue-router';
 import { Shadertoy } from 'hiwebgl-shadertoy-webgpu/dist/Shadertoy';
 
 export default {
@@ -48,15 +48,14 @@ export default {
         })
 
         onBeforeRouteUpdate( async () => {
-            if ( thisShaderCode !== props.shaderCode || thisShadertoyID !== props.shaderCode ) {
-
+            if ( thisShaderCode !== props.shaderCode || thisShadertoyID !== props.shadertoyID ) {
                 shadertoy.StopRender();
                 if ( props.shadertoyID ) {
                     await shadertoy.GetCodeByID( props.shadertoyID );
                 } else {
                     shadertoy.SetCode(props.shaderCode)
                 }
-                shadertoy._lastFrameTime = performance.now();
+                shadertoy.__iTimeArray[ 0 ] = 0;
                 await shadertoy.InitRenderer();
                 shadertoy.Render();
 

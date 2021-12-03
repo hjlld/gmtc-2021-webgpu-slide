@@ -58,7 +58,7 @@ export default defineComponent({
 
     const router = useRouter();
     const route = useRoute();
-    const header = ref(null);
+    // const header = ref(null);
     const leftDrawerOpen = ref(false);
     const animationDirection = ref({
       enter: 'animated fadeInRight',
@@ -116,11 +116,11 @@ export default defineComponent({
 
     const toggleLeftDrawer = () => {
       leftDrawerOpen.value = !leftDrawerOpen.value;
-      if (leftDrawerOpen.value) {
-        header.value.$el.style.width = '100%';
-      } else {
-        header.value.$el.style.width = '10%';
-      }
+      // if (leftDrawerOpen.value) {
+      //   header.value.$el.style.width = '100%';
+      // } else {
+      //   header.value.$el.style.width = '10%';
+      // }
     }
 
     const jump = (chapterIdx, slideIdx) => {
@@ -209,7 +209,6 @@ export default defineComponent({
     );
 
     return {
-      header,
       leftDrawerOpen,
       toggleLeftDrawer,
       chapterIndex,
